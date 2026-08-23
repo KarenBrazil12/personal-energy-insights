@@ -9,7 +9,7 @@ Reviewed fragments are authoritative; this compiled document is their determinis
 
 | # | Date | Title | Kind | Decision summary |
 |---|---|---|---|---|
-| [1](#entry-governance-adopt-adr-metadata-model) | 2026-08-23 | [Governance] Adopt ADR metadata model | product | Adopt ADR-000: every ADR carries explicit Status, Scope and Decision strength using a defined repository vocabulary. |
+| [1](#entry-governance-adopt-adr-metadata-model) | 2026-08-23 | [Governance] Adopt ADR metadata model | governance | Adopt ADR-000: every ADR carries explicit Status, Scope and Decision strength using a defined repository vocabulary. |
 
 ---
 
@@ -17,7 +17,7 @@ Reviewed fragments are authoritative; this compiled document is their determinis
 
 ## Entry 1 — 2026-08-23 — [Governance] Adopt ADR metadata model
 
-*Kind: product. Status: accepted.*
+*Kind: governance. Status: accepted.*
 
 ## Context
 
