@@ -1,8 +1,8 @@
 # ADR-001: Treat historical usage cost as analytical insight, not bill reproduction
 
 **Status:** Accepted  
-**Scope:** Historical grid-import usage-cost capability  
-**Decision strength:** Durable
+**Scope:** Product — historical grid-import usage-cost capability  
+**Decision strength:** Definitive
 
 ## Context
 
@@ -32,6 +32,8 @@ Within this scope:
 - retain interval-level provenance so the analytical result remains explainable.
 
 An analytical result is exact according to this declared calculation contract when its required evidence is complete. A difference from a supplier bill does not by itself make the analytical result approximate or incorrect; the two results may be governed by different semantics.
+
+Because this decision is `Definitive`, an implementation must not silently substitute supplier-bill reproduction within this scope. Changing that product meaning requires a deliberate amendment or superseding decision.
 
 ## Consequences
 
@@ -83,6 +85,7 @@ This decision does not resolve:
 ## Evidence and traceability
 
 - Issue #2 records the proposition, shaping evidence and human decision used to propose this ADR.
+- ADR-000 defines the `Accepted` / `Product` / `Definitive` metadata model used by this ADR and must be adopted before this ADR is merged.
 - [`../product/intent.md`](../product/intent.md) defines the current outcome and excludes full bill reconciliation.
 - [`../product/understanding.md`](../product/understanding.md) is reconciled by removing the working semantic fork once this decision is promoted.
 - [`../specs/historical-usage-cost/spec.md`](../specs/historical-usage-cost/spec.md) defines the behaviour reconciled with this decision.
