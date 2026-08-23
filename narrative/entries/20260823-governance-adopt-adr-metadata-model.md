@@ -3,7 +3,7 @@ date: 2026-08-23
 slug: governance-adopt-adr-metadata-model
 title: "[Governance] Adopt ADR metadata model"
 summary: "Adopt ADR-000: every ADR carries explicit Status, Scope and Decision strength using a defined repository vocabulary."
-kind: product
+kind: governance
 status: accepted
 sequence: 2026-08-23T13:39:44.000Z
 evidence: "https://github.com/KarenBrazil12/personal-energy-insights/pull/11; merge commit 3f7f91743e132a380e2d95472b4668c111ffe942"
