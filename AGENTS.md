@@ -1,0 +1,124 @@
+# Repository Operating Instructions
+
+## Core principle
+
+**AI compresses information; the architect expands judgement.**
+
+AI may gather and compress evidence, draft repository changes, identify inconsistencies, surface questions and propose interpretations. It must not quietly turn generated output into architectural authority.
+
+The operating loop is:
+
+**notice → reason → capture → test → review → decide → leave a durable trail**
+
+A common change path is:
+
+**observation → issue → proposed change → PR → automated evidence → human review → merge → Narrative**
+
+## Sources of authority
+
+Treat adopted repository content according to its purpose and scope.
+
+- **Intent** establishes why the product or slice exists and its boundaries.
+- **Understanding** is a working staging area containing mixed epistemic states. Presence there does not make a statement an architectural commitment.
+- **Domain** establishes adopted meaning and relationships.
+- **Specification** establishes adopted required behaviour for its stated status and scope.
+- **Decisions** establish durable consequential choices once adopted through an ADR.
+- **Narrative**, once introduced, is an authoritative historical account of meaningful architectural change, but it does not override current Domain, Specification or Decisions.
+
+AI-generated text has no additional authority because AI generated it.
+
+## Epistemic discipline
+
+Keep these distinct:
+
+- **Fact** — supported by evidence.
+- **Assumption** — currently relied upon but not yet established.
+- **Inference** — a conclusion drawn from evidence or other statements.
+- **Open question** — materially unresolved.
+- **Deferred** — deliberately not being answered in the current scope.
+- **Decision candidate** — a possible durable commitment that has not yet crossed the human decision boundary.
+- **Architectural commitment** — an adopted consequential decision within a stated scope.
+
+Do not silently promote:
+
+- assumptions into facts;
+- inferences into facts;
+- questions into answers;
+- decision candidates into commitments;
+- generated recommendations into decisions.
+
+## Builder autonomy
+
+A builder may choose ordinary implementation details where those choices do not alter established Intent, Domain, Specification or Decisions.
+
+If material behaviour, meaning, ownership, failure behaviour or a required boundary is ambiguous, surface the ambiguity rather than inventing an architectural answer merely to continue implementation.
+
+Builder-discovered ambiguity is specification evidence.
+
+## Evidence and controls
+
+Use deterministic automation for things machines can genuinely establish.
+
+A deterministic check establishes only what it actually tested.
+
+Examples include:
+
+- syntax and schema validity;
+- calculation correctness against known examples;
+- completeness checks where completeness is mechanically defined;
+- internal link integrity;
+- deterministic domain constraints.
+
+AI or semantic review is an **evidence-generating second pair of eyes**, not approval and not a source of truth.
+
+Controls should produce evidence a human can understand well enough to act on.
+
+Meaningful human control should put the relevant question and evidence in front of the human while the decision can still change the outcome.
+
+## Architecture review lens
+
+For meaningful changes ask:
+
+- What is actually decided?
+- What remains unproven?
+- Who owns or is responsible for what?
+- What happens on failure?
+- Where is meaningful human control?
+
+When a review reveals another concern, ask:
+
+**Did this change create the problem, or did reviewing this change merely reveal it?**
+
+If the concern is pre-existing and does not invalidate the current proposition, normally capture it as separate follow-up work rather than bloating or blocking the change.
+
+**Not blocking does not mean not worth understanding.**
+
+## ADR discipline
+
+Not every decision deserves an ADR.
+
+Use an ADR when future humans or agents are likely to need to know that a consequential choice was deliberately made, what alternatives mattered, why the choice was made, and what its stated scope and decision strength are.
+
+Keep **Status**, **Scope** and **Decision strength** separate. An accepted experimental decision is not automatically universal or immutable.
+
+Decision candidates should normally mature in Understanding and through proposition-led issues before promotion into an ADR.
+
+A PR that introduces or materially changes an ADR should normally include or update Narrative when the architectural understanding has materially changed.
+
+## Reconciliation
+
+Merging an implementation artefact does not by itself mean the originating intent has been fulfilled.
+
+Before closing meaningful parent intent, reconcile:
+
+- what was intended;
+- what was learned;
+- what was adopted into Domain or Specification;
+- what was decided;
+- what was implemented;
+- what remains unresolved;
+- what was deliberately deferred.
+
+PR review is a **local sensor** for what a change may have disturbed.
+
+Occasional whole-repository reconciliation is a **system-level health check** for cumulative semantic or architectural drift that no individual PR necessarily caused.
