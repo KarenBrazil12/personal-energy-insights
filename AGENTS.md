@@ -10,9 +10,11 @@ The operating loop is:
 
 **notice → reason → capture → test → review → decide → leave a durable trail**
 
-A common change path is:
+A common decision-bearing change path is:
 
-**observation → issue → proposed change → PR → automated evidence → human review → merge → Narrative**
+**observation → issue → proposed change → PR → automated evidence → human review → merge → Narrative proposal → human review → Narrative merge**
+
+Mechanical changes that do not alter project intent do not need a Narrative entry.
 
 ## Sources of authority
 
@@ -23,7 +25,7 @@ Treat adopted repository content according to its purpose and scope.
 - **Domain** establishes adopted meaning and relationships.
 - **Specification** establishes adopted required behaviour for its stated status and scope.
 - **Decisions** establish durable consequential choices once adopted through an ADR.
-- **Narrative**, once introduced, is an authoritative historical account of meaningful architectural change, but it does not override current Domain, Specification or Decisions.
+- **Narrative fragments** establish the accepted historical account of meaningful architectural change once reviewed and merged. Generated `Narrative.md` is their deterministic projection for replay and navigation; neither overrides current Domain, Specification or Decisions.
 
 AI-generated text has no additional authority because AI generated it.
 
@@ -119,6 +121,29 @@ Do not add role prefixes such as **[Architect]**, **[Builder]** or **[AI]** unle
 
 Issue naming is guidance rather than a mechanically enforced rule. Add stronger validation only if inconsistent naming later creates a real navigation or governance problem.
 
+## Project Narrative
+
+Project Narrative is the repository's deterministic, review-first history mechanism.
+
+`Narrative.md` is generated from reviewed fragments under the configured Narrative fragments directory. Never author, hand-edit or hand-merge the generated file. Edit the authoritative fragment and recompile instead. If parallel branches produce a conflict only in the generated projection while their fragments merge cleanly, discard the conflicted projection and regenerate it from the merged fragments.
+
+A decision-bearing pull request needs **both**:
+
+- the exact `narrative-required` label; and
+- non-empty sections with these exact headings: `## Narrative Context`, `## Narrative Decision`, and `## Narrative Consequences`.
+
+Use the label for meaningful product, domain, architecture, governance, operational, correction or experimental decisions. Leave it off mechanical changes that preserve intent.
+
+The maintenance workflow acts on the merge event only. A missing label causes no Narrative proposal; the label with missing required sections fails visibly. Neither omission can be repaired merely by editing or labelling the already-merged PR. A genuinely missed record must be added explicitly as a fragment and reviewed on its own merits.
+
+Supplying a pull-request body programmatically replaces the repository template. When creating a decision-bearing PR with an explicit body, include the three Narrative sections yourself.
+
+A Narrative-only proposal PR must not carry `narrative-required`, otherwise maintaining the history would recursively request another history entry.
+
+The project PR merge accepts the underlying decision. The later Narrative proposal is an interpretation of that explicit evidence; merging the Narrative PR accepts the wording of the historical record. AI may help draft the three sections, but it must not invent rationale from a diff or treat generated wording as accepted merely because it was produced.
+
+Do not rewrite an accepted historical fragment to make a later, better framing appear to have existed earlier. A reversal or material correction becomes a new `correction` entry citing the earlier entry by its stable slug.
+
 ## Architecture review lens
 
 For meaningful changes ask:
@@ -147,7 +172,7 @@ Keep **Status**, **Scope** and **Decision strength** separate. An accepted exper
 
 Decision candidates should normally mature in Understanding and through proposition-led issues before promotion into an ADR.
 
-A PR that introduces or materially changes an ADR should normally include or update Narrative when the architectural understanding has materially changed.
+A PR that introduces or materially changes an ADR should normally carry `narrative-required` and explicit Narrative Context, Decision and Consequences when architectural understanding has materially changed. The separate Narrative proposal created after merge records that accepted change without making the project PR edit the historical projection directly.
 
 ## Reconciliation
 
