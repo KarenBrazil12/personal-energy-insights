@@ -24,6 +24,8 @@ Every ADR carries three orthogonal dimensions:
 
 The dimensions must not be inferred from one another. An `Accepted` ADR is not automatically `Definitive`; a `Platform` ADR is not automatically stronger than a `Product` ADR.
 
+Each field uses one canonical value from the vocabularies below. An explanatory qualifier may follow that value after an em dash where it helps make the local boundary clear; the qualifier does not create a new metadata value.
+
 ### Status
 
 Allowed Status values are:
