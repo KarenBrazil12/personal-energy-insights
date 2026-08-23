@@ -93,6 +93,32 @@ Use environment variables or an appropriate secret store for credentials. Do not
 
 The fact that a value is not detected by automated secret scanning does not make it safe to publish.
 
+## Issue naming
+
+Issue titles should normally use:
+
+**`[Area] Clear action-oriented title`**
+
+The title should describe the proposition, question or outcome being worked, not pre-decide the artefact expected to result.
+
+For example, prefer:
+
+- `[Product] Resolve analytical usage-cost semantics`
+
+rather than:
+
+- `[ADR] Create ADR-001`
+
+because the issue may ultimately be resolved by an ADR, a specification change, a domain clarification, a deliberate deferral or another appropriate outcome.
+
+Reuse an existing area prefix when it accurately describes the work. Introduce a new area only when it makes the issue set easier to understand; do not create prefixes merely for specificity or decoration.
+
+Examples of useful areas may include `[Product]`, `[Governance]`, `[Domain]`, `[Evidence]` and `[Build]`, but this list is **emergent guidance, not an authoritative registry**.
+
+Do not add role prefixes such as `[Architect]`, `[Builder]` or `[AI]` unless a demonstrated need makes role distinction useful to the work itself.
+
+Issue naming is guidance rather than a mechanically enforced rule. Add stronger validation only if inconsistent naming later creates a real navigation or governance problem.
+
 ## Architecture review lens
 
 For meaningful changes ask:
