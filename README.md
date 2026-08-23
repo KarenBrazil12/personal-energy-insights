@@ -21,7 +21,8 @@ Ambiguity discovered by the builder is evidence about the quality of the specifi
 - What is currently known, inferred, questioned or deferred: [`product/understanding.md`](product/understanding.md)
 - What the domain terms mean: [`domain/model.md`](domain/model.md)
 - What the current slice must do: [`specs/historical-usage-cost/spec.md`](specs/historical-usage-cost/spec.md)
+- How architectural understanding changed over time: [`Narrative.md`](Narrative.md)
 
 Durable architecture decisions are introduced only when a decision has earned an ADR.
 
-Narrative is introduced with the first meaningful durable architecture decision, so the repository begins telling its architectural story when there is actually a story to replay.
+Project Narrative is scaffolded before the first durable architecture decision so the history mechanism is ready without creating an entry prematurely. Its first reviewed fragment is created only when a meaningful change actually earns one. `Narrative.md` is generated from those reviewed fragments and is not hand-authored.
