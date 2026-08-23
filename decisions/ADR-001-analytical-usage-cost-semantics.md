@@ -84,7 +84,7 @@ This decision does not resolve:
 
 - Issue #2 records the proposition, shaping evidence and human decision used to propose this ADR.
 - [`../product/intent.md`](../product/intent.md) defines the current outcome and excludes full bill reconciliation.
-- [`../product/understanding.md`](../product/understanding.md) records the working semantic fork that this ADR resolves.
-- [`../specs/historical-usage-cost/spec.md`](../specs/historical-usage-cost/spec.md) defines the behaviour that must be reconciled with this decision.
+- [`../product/understanding.md`](../product/understanding.md) is reconciled by removing the working semantic fork once this decision is promoted.
+- [`../specs/historical-usage-cost/spec.md`](../specs/historical-usage-cost/spec.md) defines the behaviour reconciled with this decision.
 
 This ADR becomes repository authority only when the pull request carrying it is reviewed and merged.
