@@ -75,6 +75,24 @@ Controls should produce evidence a human can understand well enough to act on.
 
 Meaningful human control should put the relevant question and evidence in front of the human while the decision can still change the outcome.
 
+## Public repository safety
+
+This repository is deliberately public. Public visibility is part of the experiment, but credentials and identifiable personal data are not architecture artefacts.
+
+Never commit:
+
+- API keys, access tokens, passwords, private keys or other credentials;
+- personal energy-account identifiers;
+- MPANs, meter serial numbers, home addresses or other identifiers that connect repository data to a real household;
+- identifiable household energy readings or exports from a real account;
+- screenshots, logs or fixtures containing any of the above.
+
+Real account data used for discovery or testing must remain local or in an explicitly private environment. Repository fixtures must be synthetic or deliberately sanitised.
+
+Use environment variables or an appropriate secret store for credentials. Do not echo secret values or private account data into CI logs, issues, pull requests or review comments.
+
+The fact that a value is not detected by automated secret scanning does not make it safe to publish.
+
 ## Architecture review lens
 
 For meaningful changes ask:

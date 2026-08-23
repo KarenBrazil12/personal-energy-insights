@@ -1,0 +1,12 @@
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+
+# Private local data
+secrets/
+data/private/
+
+# Private key material
+*.pem
+*.key
