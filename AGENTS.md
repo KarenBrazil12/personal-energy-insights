@@ -121,6 +121,12 @@ Do not add role prefixes such as **[Architect]**, **[Builder]** or **[AI]** unle
 
 Issue naming is guidance rather than a mechanically enforced rule. Add stronger validation only if inconsistent naming later creates a real navigation or governance problem.
 
+## Semantic formatting
+
+Use inline code formatting for exact technical or canonical identifiers whose spelling matters, such as filenames and paths, labels, commands, schema or enum values, exact interface headings or fields, and adopted domain identifiers.
+
+Do not use inline code merely for emphasis or for ordinary human concepts. Backticks signal literal identity; they do **not** by themselves mean that a term belongs to the ontology. Ontology authority comes from the repository's adopted domain or ontology artefacts, not from Markdown formatting.
+
 ## Project Narrative
 
 Project Narrative is the repository's deterministic, review-first history mechanism.
