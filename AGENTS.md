@@ -127,6 +127,8 @@ Use inline code formatting for exact technical or canonical identifiers whose sp
 
 Do not use inline code merely for emphasis or for ordinary human concepts. Backticks signal literal identity; they do **not** by themselves mean that a term belongs to the ontology. Ontology authority comes from the repository's adopted domain or ontology artefacts, not from Markdown formatting.
 
+A backticked identifier written in PascalCase is a stronger semantic signal. A deterministic ontology linter may treat that form as a candidate assertion of canonical domain vocabulary and require it either to be defined by the adopted ontology or explicitly recognised as a legitimate non-domain identifier. Use backticked PascalCase deliberately rather than as ordinary formatting.
+
 ## Project Narrative
 
 Project Narrative is the repository's deterministic, review-first history mechanism.
