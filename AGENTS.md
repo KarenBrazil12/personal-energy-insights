@@ -178,6 +178,16 @@ Use an ADR when future humans or agents are likely to need to know that a conseq
 
 Keep **Status**, **Scope** and **Decision strength** separate. An accepted experimental decision is not automatically universal or immutable.
 
+ADR metadata follows [`decisions/ADR-000-adr-metadata-model.md`](decisions/ADR-000-adr-metadata-model.md). Use only the adopted values unless ADR-000 is deliberately amended or superseded:
+
+- **Status:** `Draft`, `Proposed`, `Accepted`, `Rejected`, `Withdrawn`, `Superseded`, `Blocked`.
+- **Scope:** `Platform`, `Pattern`, `Product`, `Meta (governance)`.
+- **Decision strength:** `Definitive`, `Design choice`, `Guideline`.
+
+Status describes decision lifecycle; Scope describes ownership/applicability; Decision strength describes how strongly the decision constrains work and the permitted departure path. Do not infer one dimension from another.
+
+A branch or pull request is not repository authority. An ADR may state `Accepted` when the human decision has already been explicitly made and the PR makes that decision reconstructable, but merge to `main` is still required before that ADR becomes part of the authoritative repository state. Merge must never silently change an unresolved ADR from `Draft` or `Proposed` to `Accepted`.
+
 Decision candidates should normally mature in Understanding and through proposition-led issues before promotion into an ADR.
 
 A PR that introduces or materially changes an ADR should normally carry `narrative-required` and explicit Narrative Context, Decision and Consequences when architectural understanding has materially changed. The separate Narrative proposal created after merge records that accepted change without making the project PR edit the historical projection directly.
