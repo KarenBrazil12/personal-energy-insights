@@ -21,6 +21,7 @@ Ambiguity discovered by the builder is evidence about the quality of the specifi
 - What is currently known, inferred, questioned or deferred: [`product/understanding.md`](product/understanding.md)
 - What the domain terms mean: [`domain/model.md`](domain/model.md)
 - What the current slice must do: [`specs/historical-usage-cost/spec.md`](specs/historical-usage-cost/spec.md)
+- Why durable architectural choices were made: [`decisions/ADR-001-analytical-usage-cost-semantics.md`](decisions/ADR-001-analytical-usage-cost-semantics.md)
 - How architectural understanding changed over time: [`Narrative.md`](Narrative.md)
 
 Durable architecture decisions are introduced only when a decision has earned an ADR.

@@ -9,6 +9,12 @@ This specification defines the current adopted behaviour for the historical grid
 
 For a selected historical period, produce an explainable calculation of the usage cost associated with evidenced grid-import energy.
 
+## Calculation semantics
+
+Historical grid-import usage cost is an analytical result based on evidenced measurements and evidenced applicable pricing. It is not a reproduction of supplier billing semantics.
+
+[`../../decisions/ADR-001-analytical-usage-cost-semantics.md`](../../decisions/ADR-001-analytical-usage-cost-semantics.md) defines this product-semantic boundary.
+
 ## Conceptual inputs
 
 The capability requires:
@@ -43,6 +49,9 @@ Produce a result containing:
 9. A partial evidenced cost may be shown, but it must not be represented as the complete cost of the selected period.
 10. Every cost contribution must remain traceable to the measurement and pricing evidence used to derive it.
 11. Completeness must be assessed from meaningful temporal/evidence coverage rather than a fixed expected record count.
+12. Analytical costing must preserve the useful precision of the evidenced measurements and applicable pricing through the calculation.
+13. Supplier-specific intermediate rounding must not be introduced merely to reproduce or approximate a supplier bill.
+14. Currency rounding must occur only at an explicit product or presentation boundary and must not be confused with the analytical calculation semantics.
 
 ## Acceptance examples
 
@@ -68,6 +77,17 @@ then each measurement interval is costed using the pricing applicable to that in
 Given the selected period crosses an agreement boundary,
 
 then intervals on either side are resolved using their governing agreement/pricing evidence.
+
+### Analytical precision
+
+Given evidenced measurements or applicable pricing contain more precision than the final displayed currency amount,
+
+then:
+
+- the calculation uses the useful source precision rather than supplier-specific billing-rounding rules;
+- intermediate interval contributions are not rounded merely to imitate a bill;
+- presentation rounding is applied only at the explicit output boundary;
+- a legitimate difference from a supplier bill is not by itself treated as a calculation defect.
 
 ### Missing measurement
 

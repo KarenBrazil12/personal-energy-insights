@@ -32,7 +32,6 @@ The relevant official evidence should be captured or linked by the issues that r
 
 ### Product / calculation semantics
 
-- Should analytical usage costing use source measurement precision or reproduce supplier billing-rounding semantics?
 - What selected-period boundary should the first user-facing capability support: whole local calendar dates, arbitrary complete measurement intervals, or something else?
 
 ### Evidence / integration discovery
@@ -45,20 +44,6 @@ The relevant official evidence should be captured or linked by the issues that r
 ## Decision candidates
 
 These are **not ADRs**. They are candidates to be tested through issues and promoted only if they prove durable, consequential and ADR-worthy.
-
-### Analytical costing semantics
-
-Candidate proposition:
-
-> Historical usage costing is an analytical insight based on evidenced measurements and applicable pricing, not an attempt to reconstruct the supplier bill.
-
-Possible consequence:
-
-- use source measurement precision for analytical costing;
-- keep supplier billing-rounding semantics as known evidence;
-- treat exact bill reconstruction as a separate future capability.
-
-This appears to be a strong candidate for the first ADR because it changes the meaning of the result and is likely to matter to future capabilities.
 
 ### Selected-period semantics
 
