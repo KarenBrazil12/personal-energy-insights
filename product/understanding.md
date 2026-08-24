@@ -61,6 +61,36 @@ Candidate proposition:
 
 This is already reflected as required behaviour, but the eventual architectural boundary for establishing that relationship remains undecided.
 
+## Emerging future-shape hypothesis
+
+The eventual product may be a locally operated application rather than a centrally hosted cloud service.
+
+A possible user experience is that a user:
+
+- installs or starts the application on their own computer;
+- supplies credentials or API keys for the external energy services they choose to connect;
+- has those credentials and selected personal energy data retained securely on that machine for repeat use;
+- interacts with the product through a local application or web interface while the local environment makes outbound calls to external provider APIs.
+
+This direction is a hypothesis, not an architecture commitment.
+
+Issue #14 records evidence from an existing local application that a standalone browser-based UI can be packaged and operated using Docker. That implementation deliberately does not retain its user-supplied API key, so it demonstrates only part of the possible shape here.
+
+A stateful personal-energy application introduces additional questions around trust boundaries, secret retention, persistence and local operability. A distinct local application/service boundary and persistence layer are therefore candidates to investigate rather than architecture inherited from the reference implementation.
+
+Potential technologies discussed as examples include Blazor WebAssembly, React or Angular for a client UI; a distinct Web API/application-service layer; PostgreSQL for persistence; and Docker for local packaging/runtime. None is selected.
+
+Questions raised by this hypothesis include:
+
+- Is the desired property strictly local-only, or local-first with outbound access to external provider APIs?
+- What is the appropriate trust boundary for provider credentials and other secrets?
+- Should secrets use operating-system secure storage, encrypted persistence or another mechanism?
+- What personal energy data should be persisted locally, and for how long?
+- Is Docker an acceptable prerequisite for an eventual non-technical user?
+- How would installation, upgrades, backup and recovery work?
+- Which desktop platforms should eventually be supported?
+- Which UI, persistence and deployment technologies best serve the product once those needs are evidenced?
+
 ## Deferred
 
 - standing charges as part of a broader tariff-cost view;
