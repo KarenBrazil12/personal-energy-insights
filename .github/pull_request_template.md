@@ -4,11 +4,14 @@ Describe the repository change.
 
 ## Narrative classification
 
-- Apply `narrative-required` when this PR makes a meaningful product, architecture, governance,
-  operational, correction, or experimental decision.
+- Apply `narrative-required` when this PR makes a meaningful decision.
 - Leave the label off for mechanical changes that do not alter project intent.
 
-Delete the three sections below when the PR does not require a narrative entry.
+Delete the four sections below when the PR does not require a narrative entry.
+
+## Narrative Kind
+
+Choose one: `product`, `architecture`, `governance`, `operational`, `correction`, or `experiment`.
 
 ## Narrative Context
 
