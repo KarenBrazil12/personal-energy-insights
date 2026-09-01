@@ -11,6 +11,7 @@ Reviewed fragments are authoritative; this compiled document is their determinis
 |---|---|---|---|---|
 | [1](#entry-governance-adopt-adr-metadata-model) | 2026-08-23 | [Governance] Adopt ADR metadata model | governance | Adopt ADR-000: every ADR carries explicit Status, Scope and Decision strength using a defined repository vocabulary. |
 | [2](#entry-product-define-analytical-usage-cost-semantics) | 2026-08-23 | [Product] Define analytical usage-cost semantics | product | Adopt ADR-001 as an `Accepted` / `Product` / `Definitive` decision: historical grid-import usage cost is an analytical insight derived from evidenced source measurements and evidenced applicable pricing, not a reproduction of supplier… |
+| [3](#entry-migrate-narrative-consumers-to-explicit-kind) | 2026-09-01 | Migrate Narrative consumers to explicit kind | experiment | Migrate PEI experimentally to Narrative candidate `4088093e522bd29201d33b7b47ca000239190368`, updating both action pins, the PR template, and canonical agent instructions together. |
 
 ---
 
@@ -51,3 +52,27 @@ Adopt ADR-001 as an `Accepted` / `Product` / `Definitive` decision: historical g
 ## Consequences
 
 The product can produce a result that is exact under its declared analytical contract while legitimately differing from a supplier bill. Builders must not silently replace that meaning with supplier-bill reproduction; changing the contract requires deliberate amendment or supersession. Supplier-specific bill reconstruction remains separate future scope requiring its own evidence and decision. The selected-period boundary, pricing applicability mechanism and broader tariff/billing capabilities remain deliberately unresolved.
+
+---
+
+<a id="entry-migrate-narrative-consumers-to-explicit-kind"></a>
+
+## Entry 3 — 2026-09-01 — Migrate Narrative consumers to explicit kind
+
+*Kind: experiment. Status: accepted.*
+
+## Context
+
+The Narrative processor is being evolved from a hard-coded `product` Kind to explicit bounded Kind evidence supplied by a qualifying pull request. PEI is being used as a real existing consumer to test the manual migration contract before the candidate Narrative implementation is proposed for adoption.
+
+## Decision
+
+Migrate PEI experimentally to Narrative candidate `4088093e522bd29201d33b7b47ca000239190368`, updating both action pins, the PR template, and canonical agent instructions together.
+
+The existing pre-merge Narrative evidence behaviour is deliberately left unchanged so it can be observed separately.
+
+## Consequences
+
+PEI now describes the explicit six-value Narrative Kind contract and uses the candidate processor.
+
+This PR was intentionally created without a ## Narrative Kind section so the existing pre-merge validation behaviour could be observed. The body was corrected to the four-section contract before merge consideration.
