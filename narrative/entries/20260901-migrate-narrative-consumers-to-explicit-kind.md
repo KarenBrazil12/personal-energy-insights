@@ -21,6 +21,6 @@ The existing pre-merge Narrative evidence behaviour is deliberately left unchang
 
 ## Consequences
 
-PEI’s branch configuration now describes the explicit six-value Narrative Kind contract and will use the candidate processor after merge.
+PEI now describes the explicit six-value Narrative Kind contract and uses the candidate processor.
 
 This PR was intentionally created without a ## Narrative Kind section so the existing pre-merge validation behaviour could be observed. The body was corrected to the four-section contract before merge consideration.
