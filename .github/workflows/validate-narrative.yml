@@ -16,6 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - name: Validate fragments and compiled narrative
-        uses: jamiemitchellconsultants/Narrative@4f143bcf3f9cfd45a51aed41bdd26512f6856534
+        uses: jamiemitchellconsultants/Narrative@4088093e522bd29201d33b7b47ca000239190368
         with:
           mode: check

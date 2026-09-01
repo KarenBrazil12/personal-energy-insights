@@ -138,13 +138,16 @@ Project Narrative is the repository's deterministic, review-first history mechan
 A decision-bearing pull request needs **both**:
 
 - the exact `narrative-required` label; and
+- exactly one explicit canonical `## Narrative Kind`; and
 - non-empty sections with these exact headings: `## Narrative Context`, `## Narrative Decision`, and `## Narrative Consequences`.
+
+Select Kind from only `product`, `architecture`, `governance`, `operational`, `correction`, or `experiment`. Classify the primary nature of the decision being recorded, not the artefact changed or the implementation location. A human or coding agent may make this bounded selection judgement. Where several values seem plausible, choose the primary nature and leave the explicit choice for human review. The processor preserves the supplied Kind and never infers or defaults it.
 
 Use the label for meaningful product, domain, architecture, governance, operational, correction or experimental decisions. Leave it off mechanical changes that preserve intent.
 
 The maintenance workflow acts on the merge event only. A missing label causes no Narrative proposal; the label with missing required sections fails visibly. Neither omission can be repaired merely by editing or labelling the already-merged PR. A genuinely missed record must be added explicitly as a fragment and reviewed on its own merits.
 
-Supplying a pull-request body programmatically replaces the repository template. When creating a decision-bearing PR with an explicit body, include the three Narrative sections yourself.
+Supplying a pull-request body programmatically replaces the repository template. When creating a decision-bearing PR with an explicit body, include all four Narrative sections yourself: `## Narrative Kind`, `## Narrative Context`, `## Narrative Decision`, and `## Narrative Consequences`.
 
 A Narrative-only proposal PR must not carry `narrative-required`, otherwise maintaining the history would recursively request another history entry.
 
@@ -190,7 +193,7 @@ A branch or pull request is not repository authority. An ADR may state `Accepted
 
 Decision candidates should normally mature in Understanding and through proposition-led issues before promotion into an ADR.
 
-A PR that introduces or materially changes an ADR should normally carry `narrative-required` and explicit Narrative Context, Decision and Consequences when architectural understanding has materially changed. The separate Narrative proposal created after merge records that accepted change without making the project PR edit the historical projection directly.
+A PR that introduces or materially changes an ADR should normally carry `narrative-required` and explicit Narrative Kind, Context, Decision and Consequences when architectural understanding has materially changed. The separate Narrative proposal created after merge records that accepted change without making the project PR edit the historical projection directly.
 
 ## Reconciliation
 
